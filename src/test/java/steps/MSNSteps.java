@@ -11,25 +11,25 @@ public class MSNSteps extends PageObject {
 		// TODO Auto-generated method stub
 		msnHomePage.clickbell();
 //		
-//	}
-//	@Step("User sort the email")
-//	public void sortEmail() throws InterruptedException {
-//		// TODO Auto-generated method stub
-//		windohandlingpages.emailSort();
-//		
-//	}
-//	@Step("User switch back to parent window")
-//	public void switchBack() {
-//		// TODO Auto-generated method stub
-//		windohandlingpages.switchingBack();
-//		
-//	}
-//	@Step("User input sorted")
-//
-//	public void inputSorted() {
-//		// TODO Auto-generated method stub
-//		windohandlingpages.inputSortedEmail();
-//		
-//	}
+	}
+	@Step("User clicks on the top story link")
+	public void clickLink() throws InterruptedException {
+		// TODO Auto-generated method stub
+		msnHomePage.selectLink();
+		
+	}
+	@Step("User switch back to child window")
+	public void switchWindow() throws InterruptedException {
+		// TODO Auto-generated method stub
+		msnHomePage.switchToChild();
+		
+	}
+	@Step("User gets the text from child window to parent window")
 
-	}}
+	public void getText() throws InterruptedException {
+		// TODO Auto-generated method stub
+		msnHomePage.getTheText();
+		
+	}
+
+	}

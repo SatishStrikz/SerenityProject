@@ -25,7 +25,7 @@ public class ClosedShadowPage extends PageObject {
 
 	public void entertheText(String Text) throws InterruptedException {
 		//This Element is inside single shadow DOM.
-		String cssSelectorForHost1 = "#userName";
+		//String cssSelectorForHost1 = "#userName";
 		Thread.sleep(1000);
 		SearchContext shadow = Host1.getShadowRoot();
 		Thread.sleep(1000);

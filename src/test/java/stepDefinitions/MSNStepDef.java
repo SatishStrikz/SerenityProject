@@ -19,22 +19,22 @@ public class MSNStepDef extends PageObject {
 		msnsteps.clickbellicon();
 	    
 	}
-//
-//	@Then("User sort the email id from the red text")
-//	public void user_sort_the_email_id_from_the_red_text() throws InterruptedException {
-//	    // Write code here that turns the phrase above into concrete actions
-//		windowhandlingsteps.sortEmail();
-//	}
-//
-//	@Then("User switch back to parent window")
-//	public void user_switch_back_to_parent_window() {
-//		windowhandlingsteps.switchBack();
-//	}
-//
-//	@Then("pass the sorted email ID")
-//	public void pass_the_sorted_email_id() {
-//		windowhandlingsteps.inputSorted();
-//	    
-//	}
+
+	@Then("User clicks on the top story link")
+	public void User_clicks_on_the_top_story_link() throws InterruptedException {
+	    // Write code here that turns the phrase above into concrete actions
+		msnsteps.clickLink();
+	}
+
+	@Then("User switch  to child window")
+	public void user_switch_to_child_window() throws InterruptedException {
+		msnsteps.switchWindow();
+	}
+
+	@Then("User gets the text from child window to parent window")
+	public void text_from_child_window_to_parent_window() throws InterruptedException {
+		msnsteps.getText();
+	    
+	}
 
 }
