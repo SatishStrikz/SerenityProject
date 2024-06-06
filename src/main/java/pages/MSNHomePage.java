@@ -39,7 +39,7 @@ public class MSNHomePage extends PageObject {
 				.getShadowRoot().findElement(By.cssSelector("notification-bell[instance-id='NotificationBellWC']"))
 				.getShadowRoot().findElement(By.cssSelector("div#notificationBell"));
 		Thread.sleep(3000);
-		logger.info("Hello Satish !!!");
+		logger.info("Clicking is Done");
 		element.click();
 
 	}
@@ -56,6 +56,7 @@ public class MSNHomePage extends PageObject {
 				.findElement(By.cssSelector("div#notificationBell"))
 				.findElement(By.cssSelector("div[class='notification-item_content notification-item_content_3col']"));
 		Thread.sleep(3000);
+		logger.info("Link is Selected");
 
 		link.click();
 	}
