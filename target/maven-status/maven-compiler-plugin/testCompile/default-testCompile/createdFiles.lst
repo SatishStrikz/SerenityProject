@@ -1,0 +1,7 @@
+stepDefinitions\MSNStepDef.class
+steps\MSNSteps.class
+steps\HandlingWindowsSteps.class
+stepDefinitions\ClosedShadowStepDef.class
+runner\TestRunner.class
+steps\ClosedShadowSteps.class
+stepDefinitions\HandlingWindowsStepDef.class

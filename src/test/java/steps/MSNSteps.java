@@ -18,7 +18,7 @@ public class MSNSteps extends PageObject {
 		msnHomePage.selectLink();
 		
 	}
-	@Step("User switch back to child window")
+	@Step("User switch  to child window")
 	public void switchWindow() throws InterruptedException {
 		// TODO Auto-generated method stub
 		msnHomePage.switchToChild();
@@ -31,5 +31,42 @@ public class MSNSteps extends PageObject {
 		msnHomePage.getTheText();
 		
 	}
+	@Step("User navigate back  to parent  window")
+
+	public void switchToParent()  {
+		// TODO Auto-generated method stub
+		msnHomePage.switchBackToParent();
+		
+	}
+	@Step("User Enter the fetched text in the search field")
+
+	public void inputText() throws InterruptedException  {
+		// TODO Auto-generated method stub
+		msnHomePage.enterTextInSearch();
+		
+	}
+	@Step("User Clicks on the search icon")
+
+	public void clickSearchIcon()   {
+		// TODO Auto-generated method stub
+		msnHomePage.clickSearch();
+		
+	}
+	@Step("User goes to second child window")
+
+	public void secondWindow() throws InterruptedException   {
+		// TODO Auto-generated method stub
+		msnHomePage.secondChild();
+		
+	}
+	@Step("User Clicks on the see more button")
+
+	public void clickSeeMorebtn()   {
+		// TODO Auto-generated method stub
+		msnHomePage.clickSeeMore();
+		
+	}
+	
+	
 
 	}

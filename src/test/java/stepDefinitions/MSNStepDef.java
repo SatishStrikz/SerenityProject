@@ -36,5 +36,28 @@ public class MSNStepDef extends PageObject {
 		msnsteps.getText();
 	    
 	}
-
+	@And("User navigate back to parent window")
+	public void User_navigate_back_to_parent_window()  {
+		msnsteps.switchToParent();
+	
+	
 }
+	@Then("User Enter the fetched text in the search field")
+	public void User_Enter_the_fetched_text_in_the_search_field() throws InterruptedException {
+		msnsteps.inputText();
+	
+}
+	@And("User clicks on the search icon")
+	public void User_clicks_on_the_search_icon()  {
+		msnsteps.clickSearchIcon();
+	}
+	@Then("User goes to second child")
+	public void user_goes_to_second_child() throws InterruptedException   {
+		msnsteps.secondWindow();
+		}
+
+	@And("User clicks on see more button")
+	public void User_clicks_on_see_more_button()  {
+		msnsteps.clickSeeMorebtn();
+	}
+	}
