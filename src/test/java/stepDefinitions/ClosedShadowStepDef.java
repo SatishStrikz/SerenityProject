@@ -1,6 +1,7 @@
 package stepDefinitions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import net.serenitybdd.annotations.Steps;
 import net.serenitybdd.core.pages.PageObject;
 import steps.ClosedShadowSteps;
@@ -14,16 +15,17 @@ public class ClosedShadowStepDef extends PageObject {
 	}
 
 	@And("User enters text on Concept test field {string}")
-	public void user_enters_text_on_Concept_testt_field(String Text) throws InterruptedException {
-		closedshadowsteps.enterText(Text);
+	public void user_enters_text_on_Concept_testt_field(String text) throws InterruptedException {
+		closedshadowsteps.enterText(text);
+		}
 	    
 	
 //
-//	@Then("User sort the email id from the red text")
-//	public void user_sort_the_email_id_from_the_red_text() throws InterruptedException {
-//	    // Write code here that turns the phrase above into concrete actions
-//		windowhandlingsteps.sortEmail();
-//	}
+	@Then("User clicks on Go to cart button")
+	public void User_clicks_on_Go_to_cart_button() throws InterruptedException {
+	    // Write code here that turns the phrase above into concrete actions
+		closedshadowsteps.goToCart();
+	}}
 //
 //	@Then("User switch back to parent window")
 //	public void user_switch_back_to_parent_window() {
@@ -36,4 +38,4 @@ public class ClosedShadowStepDef extends PageObject {
 //	    
 //	}
 
-}}
+

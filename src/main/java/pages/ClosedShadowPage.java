@@ -1,90 +1,55 @@
 package pages;
+import java.time.Duration;
+import java.util.Iterator;
+import java.util.Set;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import junit.framework.Assert;
 import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.core.pages.PageObject;
-import net.serenitybdd.core.pages.WebElementFacade;
 
 public class ClosedShadowPage extends PageObject {
-	//private static final Logger logger = LogManager.getLogger(MSNHomePage.class);
-	@FindBy(css = "//fluent-design-system-provider")
-	public WebElementFacade notificationIcon;
-	@FindBy(css = "#userName")
-	public WebElementFacade Host1;
-	@FindBy(css = "p[class='im-para red']")
-	public WebElementFacade redText;
-	@FindBy(id = "username")
-	public WebElementFacade sorted;
-	String parentID;
-	String emailID;
 
-	public void entertheText(String Text) throws InterruptedException {
-		//This Element is inside single shadow DOM.
-		//String cssSelectorForHost1 = "#userName";
-		Thread.sleep(1000);
-		SearchContext shadow = Host1.getShadowRoot();
+    @FindBy(css = "#userName")
+    public WebElement Host1;
+
+    @FindBy(css = ".ud-heading-xl.clp-lead__title.clp-lead__title--small")
+    public WebElement pageHeading;
+
+    public void entertheText(String text) throws InterruptedException {
+        Thread.sleep(1000);
+        SearchContext shadow = Host1.getShadowRoot();
 		Thread.sleep(1000);
 		WebElement host =shadow.findElement(By.cssSelector("#concepts"));
-		
-		host.click();
-		Actions act = new Actions(getDriver());
-		act.sendKeys(Keys.TAB).build().perform();
-		Thread.sleep(5000);
-		act.sendKeys(Text).perform();
-		act.sendKeys(Keys.TAB).build().perform();
-		Thread.sleep(3000);
-		act.click().perform();// TODO Auto-generated method stub
-		
-//		    waitForCondition().until(
-//		        ExpectedConditions.elementToBeClickable(notificationIcon)
-//		    );
-		
-//WebElement element= getDriver().findElement(By.xpath("//fluent-design-system-provider")).
-//findElement(By.cssSelector("entry-point[instance-id='EntryPointHpWC']")).getShadowRoot().
-//		findElement(By.cssSelector("homepage-header[config-instance-src='default']")).getShadowRoot().
-//		findElement(By.cssSelector("notification-bell[instance-id='NotificationBellWC']")).getShadowRoot().
-//		findElement(By.cssSelector("div#notificationBell"));
-//Thread.sleep(3000);
-//element.click();		
+        host.click();
+        Actions act = new Actions(getDriver());
+        act.sendKeys(Keys.TAB).build().perform();
+        Thread.sleep(5000);
+        act.sendKeys(text).perform();
+        act.sendKeys(Keys.TAB).build().perform();
+        Thread.sleep(3000);
+        act.click().perform();
+    }
 
-	}
-
-//	public void emailSort() throws InterruptedException {
-//		// TODO Auto-generated method stub
-//		Thread.sleep(7000);
-//
-//		Set<String> windows = getDriver().getWindowHandles();// [parentid,chid ID]
-//		Iterator<String> it = windows.iterator();
-//		System.out.println(windows);
-////		String data = it.next();
-//		
-//		parentID = it.next();
-//		String childId = it.next();
-//		getDriver().switchTo().window(childId);
-//		logger.info("Switching is done");
-//
-//		System.out.println(redText.getText());
-//		emailID = redText.getText().split("at")[1].trim().split(" ")[0];
-//		System.out.println(emailID);// to split any text
-//
-//	}
-//
-//	public void switchingBack() {
-//		// TODO Auto-generated method stub
-//		
-//		getDriver().switchTo().window(parentID);
-//
-//	}
-//
-//	public void inputSortedEmail() {
-//		sorted.sendKeys(emailID);
-//		// TODO Auto-generated method stub
-//
-//	}
-
+    
+	public void goToCRT() {
+        Set<String> windows = getDriver().getWindowHandles();
+        Iterator<String> it = windows.iterator();
+        String parentID = it.next();
+        String childId = it.next();
+        getDriver().switchTo().window(childId);
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(40));
+        wait.until(ExpectedConditions.visibilityOf(pageHeading));
+        String heading =pageHeading.getText();
+        System.out.println(heading);
+        Assert.assertEquals(heading, "XPath, CSS Selector, Web,DOM, SelectorsHub & TestCase Studio");
+        
+    }
 }
